@@ -1,201 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <title>Portfolio</title>
-</head>
-<style>
-    *, body{
-        margin: 0;
-        padding: 0;
-        font-family: Tinos, serif;
+  </head>
+  <style>
+    *,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Tinos, serif;
     }
-    html{
-        scroll-behavior: smooth;
+    html {
+      scroll-behavior: smooth;
     }
-    body{
-        background-color: #F5F5F5;
-       
-     
+    body {
+      background-color: #f5f5f5;
     }
-    .container{
-        margin: auto;
-        width: 80%;
-        height: 100vh;
-        /* background-color: #E2E5E9; */
+    .container {
+      margin: auto;
+      width: 80%;
+      height: 100vh;
+      /* background-color: #E2E5E9; */
     }
-    .nav{
-     width: 10%;
-     height: 100vh;
-     /* background-color: red;    */
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     flex-direction: column;
-     position: fixed;
+    .nav {
+      width: 10%;
+      height: 100vh;
+      /* background-color: red;    */
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      position: fixed;
     }
-    .sectionOne, .sectionTwo{
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        
+    .section {
+      height: 100vh;
+      width: 100%;
+      position: relative;
     }
-    h1{
-        color: #E2E5E9;
-        transition: color .5s ease-in-out;
-        font-size: 12rem;
+    .sectionOne,
+    .sectionTwo,
+    .sectionThree {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .subCon{
-        /* height: 8rem; */
-        width: 70%;
-        /* background-color: rgba(222, 93, 123, 0.5); */
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        /* align-items: center; */
-        flex-direction: column;
+    h1 {
+      color: #e2e5e9;
+      transition: color 0.5s ease-in-out;
+      font-size: 12rem;
     }
-    .nametag{
-        font-size: 5rem;
-        color: #494949;
-       
+    .sectionTwo h1,
+    .sectionThree h1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
     }
-    .nametag:hover .name{
-        font-style: italic;
+    .subCon {
+      /* height: 8rem; */
+      width: 70%;
+      /* background-color: rgba(222, 93, 123, 0.5); */
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      flex-direction: column;
     }
-    p{
-        color: #494949;
-        letter-spacing: 1px;
+    .nametag {
+      font-size: 5rem;
+      color: #494949;
     }
-    header{
-        position: absolute;
-        top: 2rem;
-        left: 0;
-        font-size: 2rem;
-        color: #494949;
-        cursor: pointer;
-        transition: transform 0.5s ease-in-out;
+    .nametag:hover .name {
+      font-style: italic;
     }
-    header:hover{
-        transform: translateX(5px);
+    p {
+      color: #494949;
+      letter-spacing: 1px;
     }
-    .btnOne, .btnTwo{
-        height: 1rem;
-        width: 1rem;
-        background-color: #E2E5E9;
+    header {
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      font-size: 2rem;
+      color: #494949;
+      cursor: pointer;
+      transition: transform 0.5s ease-in-out;
     }
-    .btnOne:hover, .btnTwo:hover{
-        box-sizing: border-box;
-        background-color: #494949;
-        border: 3px solid #1F1F1F;
+    header:hover {
+      transform: translateX(5px);
     }
-    .frame{
-        height: 300px;
-        width: 300px;
-        /* background-color: red; */
-        position: absolute;
-        top: 60px;
-        right: 0;
-        transform: skewY(0deg);
-        border-radius: 20px;
-       animation: appear .5s forwards;
-        /* overflow: hidden; */
-       animation-delay: 0.5s;
+    .btn {
+      height: 1rem;
+      width: 1rem;
+      background-color: #e2e5e9;
+    }
+    .btn.active {
+      background-color: #1f1f1f;
+      transform: rotate(45deg);
+    }
+    .btn:hover {
+      background-color: #1f1f1f;
+      animation: rotate 0.5s forwards;
+    }
+    @keyframes rotate {
+      to {
+        transform: rotate(45deg);
+      }
+    }
+
+    .frame {
+      height: 300px;
+      width: 200px;
+      /* background-color: red; */
+      position: absolute;
+      top: 60px;
+      right: 50px;
+      transform: skewY(0deg);
+      border-radius: 20px;
+      animation: appear 0.5s forwards;
+      /* overflow: hidden; */
+      animation-delay: 0.5s;
     }
     @keyframes appear {
-            from {
-                transform: skewY(0deg);
-            }
-            to {
-                transform: skewY(10deg);
-            }
-        }
-        .front{
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-        position: absolute;
-        border-radius: 20px;
-        background-color: #181818;
-        transform: translateY(0px) translateX(0px);
-        animation: front .5s forwards;
-        animation-delay: 0.5s;
-        background: url("me.png");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+      from {
+        transform: skewY(0deg);
+      }
+      to {
+        transform: skewY(10deg);
+      }
+    }
+    .front {
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      position: absolute;
+      border-radius: 20px;
+      background-color: #181818;
+      transform: translateY(0px) translateX(0px);
+      animation: front 0.5s forwards;
+      animation-delay: 0.5s;
+      background: url("me.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     @keyframes front {
-            from {
-                transform: translateY(0px) translateX(0px);
-            }
-            to {
-                transform: translateY(-25px) translateX(25px);
-            }
-        }
-    .center{
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        border-radius: 20px;
-        /* background-color: yellow; */
-        box-sizing: border-box;
-        border: solid 3px white;
-    }
-    
-    
-    .back{
-        position: absolute;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        border-radius: 20px;
-        background-color: #E2E5E9;
+      from {
         transform: translateY(0px) translateX(0px);
-        animation: back .5s forwards;
-        animation-delay: 0.5s;
-        
+      }
+      to {
+        transform: translateY(-25px) translateX(25px);
+      }
     }
-    @keyframes back{
-        from {
-                transform: translateY(0px) translateX(0px);
-            }
-            to {
-                transform: translateY(25px) translateX(-25px);
-            }
+    .center {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border-radius: 20px;
+      /* background-color: yellow; */
+      box-sizing: border-box;
+      border: solid 3px white;
     }
-</style>
-<body>
+
+    .back {
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      border-radius: 20px;
+      background-color: #e2e5e9;
+      transform: translateY(0px) translateX(0px);
+      animation: back 0.5s forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes back {
+      from {
+        transform: translateY(0px) translateX(0px);
+      }
+      to {
+        transform: translateY(25px) translateX(-25px);
+      }
+    }
+    .projectCon {
+      height: 70%;
+      width: 90%;
+      bottom: 20px;
+      /* background-color: red; */
+      /* opacity: 0.5; */
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .projects {
+      height: 70%;
+      width: 300px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .projects .main {
+      height: 60%;
+      width: 90%;
+      background-color: #1f1f1f;
+    }
+    .projects .text {
+      height: 30%;
+      width: 90%;
+      /* background-color: #494949; */
+    }
+    .text h2 {
+      color: #181818;
+      font-family: Alumni Sans Pinstripe;
+    }
+  </style>
+  <body>
     <div class="nav">
-        <a class="btnOne" href="#sectionOne"></a>
-        <a class="btnTwo" href="#sectionTwo"></a>
+      <a class="btn" href="#sectionOne" data-section="sectionOne"></a>
+      <a class="btn" href="#sectionTwo" data-section="sectionTwo"></a>
+      <a class="btn" href="#sectionThree" data-section="sectionThree"></a>
     </div>
     <div class="container">
-        <div class="sectionOne" id="sectionOne">
-            <header>
-                <h3>mntd.</h3>
-            </header>
-            <div class="frame">
-                <div class="front"></div>
-                <div class="center"></div>
-                <div class="back"></div>
-            </div>
-            <h1>Hello & Welcome!</h1>
-            <div class="subCon">
-                <h2 class="nametag">I'm <span class="name">Khirt Manatad</span></h2>
-                <p>An aspiring Frontend Developer with a passion for creating beautifully designed and user-friendly websites.  I specialize in crafting clean, responsive designs and I'm continuously learning to enhance my skills in web development.</p>
-            </div>
+      <div class="section sectionOne" id="sectionOne">
+        <header>
+          <h3>mntd.</h3>
+        </header>
+        <div class="frame">
+          <div class="front"></div>
+          <div class="center"></div>
+          <div class="back"></div>
         </div>
-        <div class="sectionTwo" id="sectionTwo">
-            
+        <h1>Hello & Welcome!</h1>
+        <div class="subCon">
+          <h2 class="nametag">I'm <span class="name">Khirt Manatad</span></h2>
+          <p>
+            An aspiring Frontend Developer with a passion for creating
+            beautifully designed and user-friendly websites. I specialize in
+            crafting clean, responsive designs and I'm continuously learning to
+            enhance my skills in web development.
+          </p>
         </div>
+      </div>
+      <div class="section sectionTwo" id="sectionTwo">
+        <h1>Skills</h1>
+      </div>
+      <div class="section sectionThree" id="sectionThree">
+        <h1>Projects</h1>
+        <div class="projectCon">
+          <div class="projects">
+            <div class="main"></div>
+            <div class="text">
+              <h2>Dragon Delivery</h2>
+            </div>
+          </div>
+          <div class="projects">
+            <div class="main"></div>
+            <div class="text">
+              <h2>Big Eyes French Fries</h2>
+            </div>
+          </div>
+          <div class="projects">
+            <div class="main"></div>
+            <div class="text">
+              <h2>Educational Perfomance Overview Platform</h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
+<script>
+  const buttons = document.querySelectorAll(".btn");
+  const sections = document.querySelectorAll(".section");
+
+  const removeActiveClasses = () => {
+    buttons.forEach((btn) => btn.classList.remove("active"));
+  };
+
+  const setActiveButton = (id) => {
+    removeActiveClasses();
+    const activeButton = document.querySelector(`.btn[data-section="${id}"]`);
+    if (activeButton) {
+      activeButton.classList.add("active");
+    }
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const sectionId = button.getAttribute("data-section");
+      setActiveButton(sectionId);
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveButton(entry.target.id);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>
