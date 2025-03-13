@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Image</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5ebe0;
+        margin: 0;
+      }
+      .container {
+        position: relative;
+      }
+      @font-face {
+        font-family: "big"; /* Custom name for the font */
+        src: url("spartan.otf") format("truetype"); /* Path to font */
+        font-weight: normal;
+        font-style: normal;
+      }
+      .floating-img {
+        height: 600px; /* Adjust as needed */
+        animation: float 3s ease-in-out infinite;
+        transform: scaleX(-1);
+      }
+      h1 {
+        font-family: "big", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>KHIRT</h1>
+    </div>
+  </body>
+</html>

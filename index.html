@@ -14,276 +14,476 @@
       href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>Khirt Manatad</title>
   </head>
-  <style>
-    *,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Tinos, serif;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      background-color: #f5f5f5;
-    }
-    .container {
-      margin: auto;
-      width: 80%;
-      height: 100vh;
-      /* background-color: #E2E5E9; */
-    }
-    .nav {
-      width: 10%;
-      height: 100vh;
-      /* background-color: red;    */
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: column;
-      position: fixed;
-    }
-    .section {
-      height: 100vh;
-      width: 100%;
-      position: relative;
-    }
-    .sectionOne,
-    .sectionTwo,
-    .sectionThree {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    h1 {
-      color: #e2e5e9;
-      transition: color 0.5s ease-in-out;
-      font-size: 12rem;
-    }
-    .sectionTwo h1,
-    .sectionThree h1 {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-    .subCon {
-      /* height: 8rem; */
-      width: 70%;
-      /* background-color: rgba(222, 93, 123, 0.5); */
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      /* align-items: center; */
-      flex-direction: column;
-    }
-    .nametag {
-      font-size: 5rem;
-      color: #494949;
-    }
-    .nametag:hover .name {
-      font-style: italic;
-    }
-    p {
-      color: #494949;
-      letter-spacing: 1px;
-    }
-    header {
-      position: absolute;
-      top: 2rem;
-      left: 0;
-      font-size: 2rem;
-      color: #494949;
-      cursor: pointer;
-      transition: transform 0.5s ease-in-out;
-    }
-    header:hover {
-      transform: translateX(5px);
-    }
-    .btn {
-      height: 1rem;
-      width: 1rem;
-      background-color: #e2e5e9;
-    }
-    .btn.active {
-      background-color: #1f1f1f;
-      transform: rotate(45deg);
-    }
-    .btn:hover {
-      background-color: #1f1f1f;
-      animation: rotate 0.5s forwards;
-    }
-    @keyframes rotate {
-      to {
-        transform: rotate(45deg);
-      }
-    }
-
-    .frame {
-      height: 300px;
-      width: 200px;
-      /* background-color: red; */
-      position: absolute;
-      top: 60px;
-      right: 50px;
-      transform: skewY(0deg);
-      border-radius: 20px;
-      animation: appear 0.5s forwards;
-      /* overflow: hidden; */
-      animation-delay: 0.5s;
-    }
-    @keyframes appear {
-      from {
-        transform: skewY(0deg);
-      }
-      to {
-        transform: skewY(10deg);
-      }
-    }
-    .front {
-      height: 100%;
-      width: 100%;
-      z-index: 2;
-      position: absolute;
-      border-radius: 20px;
-      background-color: #181818;
-      transform: translateY(0px) translateX(0px);
-      animation: front 0.5s forwards;
-      animation-delay: 0.5s;
-      background: url("me.png");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    @keyframes front {
-      from {
-        transform: translateY(0px) translateX(0px);
-      }
-      to {
-        transform: translateY(-25px) translateX(25px);
-      }
-    }
-    .center {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      border-radius: 20px;
-      /* background-color: yellow; */
-      box-sizing: border-box;
-      border: solid 3px white;
-    }
-
-    .back {
-      position: absolute;
-      z-index: -1;
-      height: 100%;
-      width: 100%;
-      border-radius: 20px;
-      background-color: #e2e5e9;
-      transform: translateY(0px) translateX(0px);
-      animation: back 0.5s forwards;
-      animation-delay: 0.5s;
-    }
-    @keyframes back {
-      from {
-        transform: translateY(0px) translateX(0px);
-      }
-      to {
-        transform: translateY(25px) translateX(-25px);
-      }
-    }
-    .projectCon {
-      height: 70%;
-      width: 90%;
-      bottom: 20px;
-      /* background-color: red; */
-      /* opacity: 0.5; */
-      position: absolute;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .projects {
-      height: 70%;
-      width: 300px;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .projects .main {
-      height: 60%;
-      width: 90%;
-      background-color: #1f1f1f;
-    }
-    .projects .text {
-      height: 30%;
-      width: 90%;
-      /* background-color: #494949; */
-    }
-    .text h2 {
-      color: #181818;
-      font-family: Alumni Sans Pinstripe;
-    }
-  </style>
   <body>
+    <!-- NAVIGATION -->
     <div class="nav">
-      <a class="btn" href="#sectionOne" data-section="sectionOne"></a>
-      <a class="btn" href="#sectionTwo" data-section="sectionTwo"></a>
-      <a class="btn" href="#sectionThree" data-section="sectionThree"></a>
+      <a class="btn" href="#sectionOne" data-section="sectionOne">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-drone"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M10 10h4v4h-4z" />
+          <path d="M10 10l-3.5 -3.5" />
+          <path d="M9.96 6a3.5 3.5 0 1 0 -3.96 3.96" />
+          <path d="M14 10l3.5 -3.5" />
+          <path d="M18 9.96a3.5 3.5 0 1 0 -3.96 -3.96" />
+          <path d="M14 14l3.5 3.5" />
+          <path d="M14.04 18a3.5 3.5 0 1 0 3.96 -3.96" />
+          <path d="M10 14l-3.5 3.5" />
+          <path d="M6 14.04a3.5 3.5 0 1 0 3.96 3.96" />
+        </svg>
+      </a>
+      <a class="btn" href="#sectionTwo" data-section="sectionTwo">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-drone"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M10 10h4v4h-4z" />
+          <path d="M10 10l-3.5 -3.5" />
+          <path d="M9.96 6a3.5 3.5 0 1 0 -3.96 3.96" />
+          <path d="M14 10l3.5 -3.5" />
+          <path d="M18 9.96a3.5 3.5 0 1 0 -3.96 -3.96" />
+          <path d="M14 14l3.5 3.5" />
+          <path d="M14.04 18a3.5 3.5 0 1 0 3.96 -3.96" />
+          <path d="M10 14l-3.5 3.5" />
+          <path d="M6 14.04a3.5 3.5 0 1 0 3.96 3.96" />
+        </svg>
+      </a>
+      <a class="btn" href="#sectionThree" data-section="sectionThree">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-drone"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M10 10h4v4h-4z" />
+          <path d="M10 10l-3.5 -3.5" />
+          <path d="M9.96 6a3.5 3.5 0 1 0 -3.96 3.96" />
+          <path d="M14 10l3.5 -3.5" />
+          <path d="M18 9.96a3.5 3.5 0 1 0 -3.96 -3.96" />
+          <path d="M14 14l3.5 3.5" />
+          <path d="M14.04 18a3.5 3.5 0 1 0 3.96 -3.96" />
+          <path d="M10 14l-3.5 3.5" />
+          <path d="M6 14.04a3.5 3.5 0 1 0 3.96 3.96" />
+        </svg>
+      </a>
+      <a class="btn" href="#sectionFour" data-section="sectionFour">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-drone"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M10 10h4v4h-4z" />
+          <path d="M10 10l-3.5 -3.5" />
+          <path d="M9.96 6a3.5 3.5 0 1 0 -3.96 3.96" />
+          <path d="M14 10l3.5 -3.5" />
+          <path d="M18 9.96a3.5 3.5 0 1 0 -3.96 -3.96" />
+          <path d="M14 14l3.5 3.5" />
+          <path d="M14.04 18a3.5 3.5 0 1 0 3.96 -3.96" />
+          <path d="M10 14l-3.5 3.5" />
+          <path d="M6 14.04a3.5 3.5 0 1 0 3.96 3.96" />
+        </svg>
+      </a>
     </div>
+    <!--  -->
+    <div class="light"></div>
     <div class="container">
-      <div class="section sectionOne" id="sectionOne">
+      <!-- SECTION ONE -->
+      <div class="section section-hero" id="sectionOne">
         <header>
-          <h3>mntd.</h3>
+          <h3></h3>
         </header>
-        <div class="frame">
-          <div class="front"></div>
-          <div class="center"></div>
-          <div class="back"></div>
-        </div>
-        <h1>Hello & Welcome!</h1>
-        <div class="subCon">
-          <h2 class="nametag">I'm <span class="name">Khirt Manatad</span></h2>
+        <div class="hero-heading">
+          <h1 class="khirt">
+            <span class="k">k</span>
+            <span class="h">h</span>
+            <span class="i">i</span>
+            <span class="r">r</span>
+            <span class="t">t</span>
+          </h1>
+          <h1 class="manatad">
+            <span>m</span>
+            <span>a</span>
+            <span>n</span>
+            <span>a</span>
+            <span>t</span>
+            <span>a</span>
+            <span>d</span>
+          </h1>
           <p>
             An aspiring Frontend Developer with a passion for creating
-            beautifully designed and user-friendly websites. I specialize in
-            crafting clean, responsive designs and I'm continuously learning to
-            enhance my skills in web development.
+            beautifully designed and user-friendly websites.
           </p>
         </div>
+        <div class="hero-photo"></div>
       </div>
+      <!--  -->
+      <!-- SECTION TWO -->
       <div class="section sectionTwo" id="sectionTwo">
-        <h1>Skills</h1>
+        <h2 class="autoShow">About</h2>
+        <div class="subCon">
+          <div class="subConLeft">
+            <p class="">
+              Hello! My name is <span>Khirt Manatad</span>, A passionate web
+              developer and designer with a strong enthusiasm for crafting
+              engaging and functional digital experiences. My journey in web
+              development is driven by creativity, innovation, and a keen eye
+              for detail. I specialize in building intuitive, user-friendly
+              websites that combine clean design with seamless functionality.
+              Always eager to learn new technologies, I focus on creating web
+              solutions that provide a smooth and enjoyable experience for
+              users.
+            </p>
+            <p class="">
+              I’m always exploring new technologies to enhance my skills, with a
+              keen interest in modern frontend frameworks like React.js and
+              backend development with Node.js. My goal is to build seamless web
+              experiences that are both functional and visually appealing.
+            </p>
+          </div>
+          <div class="subConRight">
+            <div class="subContainer">
+              <div class="left-box">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#eb5e28"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-html"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M13 16v-8l2 5l2 -5v8" />
+                  <path d="M1 16v-8" />
+                  <path d="M5 8v8" />
+                  <path d="M1 12h4" />
+                  <path d="M7 8h4" />
+                  <path d="M9 8v8" />
+                  <path d="M20 8v8h3" />
+                </svg>
+              </div>
+              <div class="right-box">
+                <p>HTML</p>
+                <p>The structure of web pages.</p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="subContainer">
+              <div class="left-box">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#81c3d7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-react"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M6.306 8.711c-2.602 .723 -4.306 1.926 -4.306 3.289c0 2.21 4.477 4 10 4c.773 0 1.526 -.035 2.248 -.102"
+                  />
+                  <path
+                    d="M17.692 15.289c2.603 -.722 4.308 -1.926 4.308 -3.289c0 -2.21 -4.477 -4 -10 -4c-.773 0 -1.526 .035 -2.25 .102"
+                  />
+                  <path
+                    d="M6.305 15.287c-.676 2.615 -.485 4.693 .695 5.373c1.913 1.105 5.703 -1.877 8.464 -6.66c.387 -.67 .733 -1.339 1.036 -2"
+                  />
+                  <path
+                    d="M17.694 8.716c.677 -2.616 .487 -4.696 -.694 -5.376c-1.913 -1.105 -5.703 1.877 -8.464 6.66c-.387 .67 -.733 1.34 -1.037 2"
+                  />
+                  <path
+                    d="M12 5.424c-1.925 -1.892 -3.82 -2.766 -5 -2.084c-1.913 1.104 -1.226 5.877 1.536 10.66c.386 .67 .793 1.304 1.212 1.896"
+                  />
+                  <path
+                    d="M12 18.574c1.926 1.893 3.821 2.768 5 2.086c1.913 -1.104 1.226 -5.877 -1.536 -10.66c-.375 -.65 -.78 -1.283 -1.212 -1.897"
+                  />
+                  <path
+                    d="M11.5 12.866a1 1 0 1 0 1 -1.732a1 1 0 0 0 -1 1.732z"
+                  />
+                </svg>
+              </div>
+              <div class="right-box">
+                <p>React</p>
+                <p>Building interactive web apps..</p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="subContainer">
+              <div class="left-box">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#81c3d7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tailwind"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z"
+                  />
+                </svg>
+              </div>
+              <div class="right-box">
+                <p>Tailwind</p>
+                <p>Fast and flexible styling.</p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="subContainer">
+              <div class="left-box">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#eb5e28"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-git"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M16 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M12 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M12 15v-6" />
+                  <path d="M15 11l-2 -2" />
+                  <path d="M11 7l-1.9 -1.9" />
+                  <path
+                    d="M13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1 -2.892 0l-7.955 -7.955a2.045 2.045 0 0 1 0 -2.892l7.955 -7.955a2.045 2.045 0 0 1 2.892 0z"
+                  />
+                </svg>
+              </div>
+              <div class="right-box">
+                <p>Git</p>
+                <p>For tracking code changes.</p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="subContainer">
+              <div class="left-box">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#0e8c61"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-figma"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path
+                    d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z"
+                  />
+                  <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" />
+                </svg>
+              </div>
+              <div class="right-box">
+                <p>Figma</p>
+                <p>For creating and prototyping interfaces.</p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="subContainer">
+              <div class="left-box">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b5cf6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-file-type-php"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                  <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4" />
+                  <path d="M5 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6" />
+                  <path d="M17 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6" />
+                  <path d="M11 21v-6" />
+                  <path d="M14 15v6" />
+                  <path d="M11 18h3" />
+                </svg>
+              </div>
+              <div class="right-box">
+                <p>PHP</p>
+                <p>Server-side scripting language</p>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
       </div>
+      <!--  -->
+      <!-- SECTION THREE -->
       <div class="section sectionThree" id="sectionThree">
-        <h1>Projects</h1>
-        <div class="projectCon">
-          <div class="projects">
-            <div class="main"></div>
-            <div class="text">
-              <h2>Dragon Delivery</h2>
+        <h2 class="autoShow">Projects</h2>
+        <div class="projects-container">
+          <a href="https://www.itracksamp.ct.ws" target="_blank"
+            ><div class="project-box pOne"></div
+          ></a>
+          <a href="http://www.dragondelivery.ct.ws" target="_blank"
+            ><div class="project-box pTwo"></div
+          ></a>
+
+          <a href="https://www.sunstar.com.ph/advertise-with-us" target="_blank"
+            ><div class="project-box pThree"></div
+          ></a>
+          <!-- <div class="project-box"></div> -->
+        </div>
+      </div>
+
+      <!--  -->
+      <!-- SECTION FOUR -->
+      <div class="section sectionFour" id="sectionFour">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+          <div class="left-container">
+            <div class="vertical-text">
+              Send <br />
+              Message
             </div>
           </div>
-          <div class="projects">
-            <div class="main"></div>
-            <div class="text">
-              <h2>Big Eyes French Fries</h2>
-            </div>
+
+          <div class="right-container">
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
           </div>
-          <div class="projects">
-            <div class="main"></div>
-            <div class="text">
-              <h2>Educational Perfomance Overview Platform</h2>
-            </div>
+        </div>
+      </div>
+
+      <div class="section sectionFive" id="sectionFive">
+        <div class="footer">
+          <div class="brand-name">Khirt Manatad.</div>
+
+          <div class="social-links">
+            <a
+              href="https://web.facebook.com/khirt00?_rdc=1&_rdr"
+              target="_blank"
+              title="Facebook"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+                />
+              </svg>
+              Facebook
+            </a>
+
+            <a href="https://github.com/kmntd" target="_blank" title="Twitter">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-brand-github"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z"
+                />
+              </svg>
+              Github
+            </a>
+          </div>
+
+          <div class="contact-info">
+            <a href="https://twitter.com" target="_blank" title="Twitter">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-phone"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z"
+                />
+              </svg>
+              09623076181
+            </a>
           </div>
         </div>
       </div>
     </div>
   </body>
 </html>
+<script></script>
+
 <script>
   const buttons = document.querySelectorAll(".btn");
   const sections = document.querySelectorAll(".section");
